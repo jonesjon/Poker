@@ -5,33 +5,28 @@ import java.time.LocalDate;
 
 import grafico.Candle;
 
+
 public class InfoCandle implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	private String nomeDoPapel;
 
-
 	private LocalDate data;
 
 	private Double abertura;
 
-	
 	private Double fechamento;
-
 	
 	private Double maxima;
 
-
 	private Double minima;
-
 
 	private Double volume;
 
 	private Double precoMedia8;
 
 	private Double precoMedia20;
-
 
 	private Double precoMedia200;
 
@@ -40,20 +35,14 @@ public class InfoCandle implements Serializable{
 	public InfoCandle() {
 
 	}
-	public InfoCandle(Candle candle, Double precoMedia8, Double precoMedia20, Double precoMedia200,
-			Double volumeMedia20) {
-
-		this.precoMedia8 = precoMedia8;
-		this.precoMedia20 = precoMedia20;
-		this.precoMedia200 = precoMedia200;
-		this.volumeMedia20 = volumeMedia20;
+	public InfoCandle(Candle candle) {
 		this.nomeDoPapel = candle.getPapel();
-//		this.abertura = candle.;
-//		this.fechamento = candle.fechamento;
-//		this.maxima = candle.maxima;
-//		this.minima = candle.minima;
-//		this.volume = candle.volume;
-//		this.data = candle.data;
+		this.abertura = candle.getAbertura();
+		this.fechamento = candle.getFechamento();
+		this.maxima = candle.getMaxima();
+		this.minima = candle.getMinima();
+		this.volume = candle.getVolume();
+		this.data = candle.getData();
 	}
 
 	/*
@@ -121,6 +110,30 @@ public class InfoCandle implements Serializable{
 
 	public Double getVolume() {
 		return volume;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public void setNomeDoPapel(String nomeDoPapel) {
+		this.nomeDoPapel = nomeDoPapel;
+	}
+	public void setData(LocalDate data) {
+		this.data = data;
+	}
+	public void setAbertura(Double abertura) {
+		this.abertura = abertura;
+	}
+	public void setFechamento(Double fechamento) {
+		this.fechamento = fechamento;
+	}
+	public void setMaxima(Double maxima) {
+		this.maxima = maxima;
+	}
+	public void setMinima(Double minima) {
+		this.minima = minima;
+	}
+	public void setVolume(Double volume) {
+		this.volume = volume;
 	}
 
 }
